@@ -1,0 +1,390 @@
+@font-face {/*Para crear mi propia tipografia*/
+    font-family:joel;
+    src: url(font/PermanentMarker-Regular.ttf) format("truetype");
+    font-weight: 400;
+}
+
+html,body {
+height: 100%;
+margin: 0;
+}
+html {
+  scroll-padding-top: 60px; /* igual al alto de tu barra, la hacer scroll con enlaces no se tapa con topbar deja un espacio*/
+}
+
+
+body{ 
+    margin: 0;
+    width: 100%;
+    font-family: joel;
+    /*  Fondo con imagen */
+
+    /* Imagen de fondo */
+    background-image: url(https://img.freepik.com/vector-gratis/fondo-hexagonal-oscuro-color-degradado_79603-1409.jpg?semt=ais_hybrid&w=740);
+
+    /* Tamaño de la imagen: cover → cubre todo el bloque (puede recortar)
+       contain → muestra todo sin recortar */
+    background-size: cover;
+
+    /* No repetir la imagen */
+    background-repeat: no-repeat;
+
+    /* Posición de la imagen: centro */
+    background-position: right bottom;
+
+    /* Fija la imagen al hacer scroll solo imagen*/
+    background-attachment: fixed;
+
+    /* Altura del bloque (puedes ajustar) */
+    height: 100%;
+   
+
+
+}  
+.box{/* ✅ RESUMEN DE POSITION Y Z-INDEX 
+
+    🔹 position: controla cómo se posiciona un elemento en la página 
+    
+    position: static;    valor por defecto, no se puede mover con top/left 
+    position: relative;  se puede mover desde su posición original 
+    position: absolute;  se posiciona respecto al ancestro más cercano que tenga position (no static), 
+    position: fixed;    se fija en la pantalla (aunque hagas scroll) 
+    position: sticky;    se comporta como relative, pero se fija al hacer scroll 
+    
+    /* 🧭 Para mover un elemento con position:  Necesitas usar también top, left, right o bottom
+    top: 50px;
+    left: 20px;
+    🔹 z-index: controla qué elemento está encima (solo funciona si el elemento tiene position que no sea static)
+    
+    z-index: 1;    más alto = más arriba 
+    z-index: 1000; típico para menús o barras 
+    z-index: -1;    puede mandar un elemento al fondo (útil para overlays) 
+    
+    🧠 REGLA:
+    Si dos elementos se superponen, el que tiene mayor z-index estará encima.
+    */
+    margin: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.7;
+    position: fixed;
+    z-index: 1;
+    background-color: #000;/*se usa con opacity para el fondo oscuro,hace que todo el elemento este transparente, puede ser tambien rgb*/
+    text-align: center;
+    
+}
+.aa{
+    position: relative;
+    font-size: 24;
+    color: rgb(61, 105, 147);
+    top: 120px;
+
+}
+
+h1{/*Esto es un selecotor ,buscamos las etiquetas que queremos que tenga estilo */
+    background-color: rgb(112, 136, 92);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 0;
+    position: fixed;
+    width: 100% ;
+    top: 0px;
+    height: 50px;
+    box-sizing: border-box /*BORDE-BOX respeta si o si las medidas, si suma los bordes y los padding*/;
+    z-index: 100;
+    padding-bottom: 0px; /*el padding si afecta pero no se logra ver , cheqealo en inspeccionar de google*/
+    color: #f3f0f0;
+    
+}
+.contenido{
+position: relative;
+margin: 50px 0 0 0;
+z-index: 2;
+
+    
+}
+.Clase_css{ /*Clase va despues de un punto*/
+    color: rgb(18, 119, 119);
+    font-family: fantasy;/*FAMILY para modificar la tipografia */
+    font-size: 24px;/*SIZE para modificar el tamaño de la letra */
+    font-weight: bold;/*WEIGHT enfatiza(negrita) textos 100 a 900 , bold(normal) lo enfatiza(negrita) en grosor 700, bolder(1+) se adelanta al peso prdeterminado , al siguiente*/
+    font-style: italic;/*STYLE medificamos lo curveado que va a estar el texto*/
+    text-align: left;/*TEXT-ALIGN para alinear el texto derecha,izquiera,centro o si queremos que termine en cada palara o no*/
+    text-decoration: line-through;/*TEXT-DECORATION para subrayar texto o tachar */
+    line-height: 1.5;/*LINE-HEIGHT es el espacion entre lineas de texto*/
+    letter-spacing: 1px;/*LETTER-SPACING modifica el espacion entre letras*/
+    text-transform: uppercase;/*TEXT-TRANSFORM modificar el texto en mayusculas, minusculas etc.CAPITALIZE*/
+}
+#Clase_2{           /*ID*/    
+    color: rgb(165, 41, 163);
+    font-size: 18px;
+}
+.Bordes{ /*Bordes,esquinas curvas, tambien se puede usar border y usar esquinas curvas 
+a los lados que quieres abajo,arriba,derecha e izquierda*/
+border: 5px solid rgb(48, 17, 112);
+border-radius: 8px;
+}
+.Fondos{/*Fondo tranparente con opacity(0 a 1todo el elemento Y USAR FONDO NEGRO) y el rgb solo el fondo*/
+    background-color: rgb(142, 50, 50);
+    opacity: 0.5;
+}
+
+.display-flex{/* Activa Flexbox */
+display: flex;
+
+/* flex-direction define la dirección del contenido:
+row = horizontal (por defecto)
+column = vertical 
+flex-direction: row;   o column 
+
+justify-content alinea en el eje principal:
+- Si row → alinea horizontal (izquierda a derecha)
+- Si column → alinea vertical (arriba a abajo) 
+justify-content: center;
+
+align-items alinea en el eje cruzado:
+- Si row → alinea vertical (arriba a abajo)
+- Si column → alinea horizontal (izquierda a derecha) 
+align-items: center;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start ;
+    width: 100%;
+    height: 800px;
+
+}
+.padre{
+    width: 350px;
+    height: 350px;
+    position: relative;
+    background-color: black;
+    /* margin-left: right y lefth: auto;para centrar al medio solo si el width esta definido*/
+    box-sizing: border-box;
+    /*display: flex;
+    justify-content: center;
+    align-items: flex-start; con DISPLAY*/
+}
+.hijo p{
+    width: 350px;
+    position: absolute;/*sale del flujo normal y con left y otro lo mueves  sino se que da donde esta*/
+    text-align: center;
+    color: aliceblue;
+    
+
+}
+.imagen-degradado{
+    width: 350px;/*widt:100; un width definido para usar text align(centra horizontalmente) ,puedo usar flexbox*/
+    height: 350px;
+    background-image: linear-gradient(to bottom,transparent ,#000 90%),
+    url(https://cdn.pixabay.com/photo/2023/10/21/11/46/sunset-8331285_1280.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    border-bottom: solid 10px aqua;/*no va*/
+    display: flex;/*display se usa en padres y tendra efecto en hijos no usar en hijoss*/
+    justify-content: center;
+    align-items: flex-end; 
+    
+    
+
+} 
+
+/*no signfica nada*/
+/*bottom: 0;otra forma
+    text-align: center;*/
+    /*siempre eliminar margen de contenidos de textos pq al
+    usar display empuja a los elementos fuera del contenedor haciendo 
+    que colapse*/
+
+/*sombra*/
+.pared{
+    width: 100%;
+    height: 50%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 25px;
+}
+.sombras{
+    color: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 40px;
+}
+.img{
+    width: 200px;
+    height: 200px;
+    background-image: url(https://inkscape.app/wp-content/uploads/imagen-vectorial.webp);
+    background-size: cover;
+    box-shadow: 40px 15px 20px 0 #000000;
+    margin-bottom: 25px;
+    
+}
+
+
+.txt{
+    font-size:24px ;
+    color: peru;
+    text-shadow: 0 0 1px black;
+}
+li{
+    color: rgb(141, 134, 134);
+    font-size: 24px;
+    text-shadow: 0 0 5px black;
+}
+/*Login practica*/
+.pared-login{
+margin: 0px;
+padding-top: 1px;/*hace que no coolapse los margenes*/
+width: 100%;
+height: 100%;
+background: linear-gradient(to left , #393838,#6f6f6f);
+display: flex;/*display para centrar*/
+flex-direction: column;
+justify-content: flex-start;
+align-items:center ;
+
+}
+
+.login{
+    width: 50%;
+    /*margin:40px auto 0 auto;puse padding al padre para pudiera hacer margin pq sino colapso y use auto para centrar*/
+    margin-top: 50px;
+    display: flex;/*display para centrar*/
+    flex-direction: column;
+    /*justify-content: flex-start; no es necesario pq el padre ya tiene*/
+    align-items:center ;
+    margin-bottom: 20px;
+    max-width: 400px;/*anula el 100% del width,pq al momento de que la pagina se agrande solo se agrandara con el tamaño que le demos, y permite centrar con magin auto*/
+    background-color:transparent;
+    padding:0 0 20px 0;/*espacion dentro del login*/
+    box-shadow: 0 0px 50px  rgb(85, 83, 83);
+    border-radius: 5px;
+    
+    box-sizing: border-box;
+
+    
+    
+}
+h2{/*Titulo de login*/
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+color: #f3f0f0;
+position: relative;
+bottom: 5px;/*esta mas arriva el titulo*/
+font-weight: 200;
+text-transform: uppercase;
+text-shadow:  0 0 10px rgb(173, 169, 169);
+
+}
+/*Div de formulario*/
+.login-nombre,.login-email,.datails,.formulario_option,.formulario_datalist,.mensaje{
+    margin: 5px 0 0 0 ;
+    padding: 4px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    /*No uso background color pq al no ponerlo es transparente por defecto*/
+
+}/*Formularios*/
+#nombre, #email,#option,#datalist,#mensaje{
+width: 100%;
+box-sizing: border-box;
+border: none;
+border-bottom: solid 3px rgb(191, 190, 190);
+border-radius: 0 0 5px 5px;
+color: rgb(190, 198, 198);
+background-color: transparent;
+padding: 10px 15px;
+font-size: 14px;
+box-shadow: 0 0 10px rgb(31, 30, 30);
+
+}
+#mensaje{
+    resize: none;
+    min-height: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+label{
+display: inline-block;
+margin-bottom: 5px;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+color: #f3f0f0;
+font-size: 13px;
+}
+option{/*Estilo a las option*/
+    background-color: #393838;
+    color: rgb(124, 129, 129);
+    
+}
+/*FIELDSET Y LEGEND*/
+fieldset{
+    border: solid 1px #a19f9f;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px;
+    
+}
+legend{
+    padding: 0 8px;
+    color: #a19f9f;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/*DATAILS Y SUMMARY*/
+details{
+    border: solid 1px #a19f9f;
+    border-radius: 5px;
+    padding: 5px 8px;
+    margin: 10px 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #a19f9f;
+    
+
+}
+a{
+text-decoration: none;
+color: #5e6599;
+}
+/*Tablas*/
+.pared-tablas{
+    padding: 1px;/*para que no colapse los margenes se agrga paddin o borde para que contenga el margen, tambien usar border-box pq sino se desborda y hace una barra horizontal*/
+    width: 100%;
+    height: 100%;
+    background-color: #a19f9f;
+    box-sizing: border-box;
+}
+.titulo-tablas{
+    color: #000000;
+    text-align: center;
+    
+}
+th,td{
+    border: solid 2px rebeccapurple;
+    padding: 5px 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+
+}
+.Tablas{
+    width: 100%;
+    height: 100%;
+    border: solid 2px rebeccapurple;
+    margin: auto;
+    margin-bottom: 50px;
+    border-collapse: collapse;/*permite juntar los bordes de las celdas, si lo usas ya no usaras border-speacing*/
+    border-spacing: 20px;/*hace que los borde dentro tengan una distancia */
+    
+}
+video{
+ width: 400px;
+}
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contenido">
+  <h1>Hola mundo</h1>
+</div>
+
+<div class="overlay">
+  <p>Cargando...</p>
+</div>
+<style>
+    .contenido {
+  height: 100vh;
+  background: white;
+}
+
+.overlay {
+  position: fixed;       /* fijo en pantalla */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* fondo oscuro semitransparente */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* encima de todo */
+}
+
+</style>
+    
+</body>
+</html>

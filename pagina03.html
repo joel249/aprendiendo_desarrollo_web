@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Selector personalizado</title>
+  <style>
+    .select-container {
+      position: relative;
+      width: 250px;
+      font-family: Arial;
+    }
+
+    .selected-option {
+      border: 2px solid #3498db;
+      padding: 10px;
+      background-color: #f0f8ff;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .options-list {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      border: 1px solid #ccc;
+      border-top: none;
+      background: #fff;
+      display: none;
+      max-height: 150px;
+      overflow-y: auto;
+      z-index: 100;
+    }
+
+    .option {
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .option:hover {
+      background-color: #e6f7ff;
+    }
+
+    .placeholder {
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+<div class="select-container">
+  <div class="selected-option placeholder">Selecciona un plato</div>
+  <div class="options-list">
+    <div class="option">Ceviche</div>
+    <div class="option">Arroz con pollo</div>
+    <div class="option">Ají de gallina</div>
+    <div class="option">Lomo saltado</div>
+  </div>
+</div>
+
+<script>
+  const selected = document.querySelector('.selected-option');
+  const optionsList = document.querySelector('.options-list');
+  const options = document.querySelectorAll('.option');
+
+  selected.addEventListener('click', () => {
+    optionsList.style.display = optionsList.style.display === 'block' ? 'none' : 'block';
+  });
+
+  options.forEach(option => {
+    option.addEventListener('click', () => {
+      selected.textContent = option.textContent;
+      selected.classList.remove('placeholder');
+      optionsList.style.display = 'none';
+    });
+  });
+
+  // Cerrar el menú si haces clic fuera
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.select-container')) {
+      optionsList.style.display = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>

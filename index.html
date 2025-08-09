@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--metadatos-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primera pagina web</title>
+    <link rel="icon" href="https://t4.ftcdn.net/jpg/05/23/56/85/360_F_523568510_gnUxC5eEuX6pxZwu7JimfLvwjYyEsYo7.png"
+    type="image/png"><!--favicon-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="box"><h2 class="aa">JOEL</h2></div> 
+
+    <!--H1 se usa solo una vez por pagina web y usar el conjunto de <h> de
+    manera jerquica-->
+<h1>Mi primera pagina web</h1>
+<div class="contenido">
+    <h2 style="color: rgb(244, 105, 105); margin: 0; ">Enlaces</h2>
+
+    <!--htpps/ para enlazar URL externa-->
+    <a href="pagina02.html">segunda pagina</a>
+
+    <!--TARGET _blank hace que lo enlazado se abra en otra pestaña-->
+    <!--noopener → evita acceso entre páginas - noreferrer → oculta origen al destino
+nofollow → buscadores no siguen el enlace-->
+    <a href="pagina03.html" target="_blank">tercera pagina</a>
+
+
+    <Ol>
+        <li><a href="#lista">LISTA</a></li>
+        <li><a href="#imagen">IMAGEN</a></li>
+        <li><a href="#formulario">FORMULARIO</a></li>
+        <li><a href="#bordes">BORDES</a></li>
+        <li><a href="#fondos">FONDOS</a></li>
+        <li><a href="#degradado">DEGRADADO</a></li>
+        <li><a href="#sombras">SOMBRAS</a></li>
+        <li><a href="#login">LOGIN</a></li>
+    </Ol>
+
+    <h2 style="color: rgb(237, 116, 116);" id="lista">Listas</h2>
+
+    <!--Lista de manera desordenada--><!--STRONG sirve para resalta texto
+    de manera visual y los lectores de pantalla puedan enfatizar en estas.-->
+    <ul>
+        <li>papa</li>
+        <li>aji</li>
+        <li>pollo</li>
+    </ul>
+    <!--Lista de manera ordanada-->
+    <ol>
+        <li>aceituna</li>
+        <li>huevo</li>
+        <li>limon</li>
+    </ol>
+
+    <h2 style="color:rgb(240, 106, 106) ;" id="imagen">Imagen</h2>
+
+    <!--TITLE se usa cuando al momento de pasar el cursor sobre una imagen, 
+    texto, enlaces,etc, puedan dar mayor informacion -->
+    <img src="imagen/imagen01.png" title="imagen de gym smart fit" >
+
+    <!--ALT se utiliza para proporcionar un texto alternativo en caso la 
+    imagen tenga problemas al mostrarse-->
+    <img src="imagen/imagen010.png" alt="imagen de smart fit">
+
+    <h2 style="color: rgb(246, 110, 110);" id="formulario">Tipos De Formulario</h2>
+    <form>
+
+    <!--REQUIRED sirve para que el campo sea completado obligatoriamente
+    //PLACEHOLDER es un texto que desaparece del campo cuando empezamos a
+    escribirlo esto ayuda a que sepamos el objetivo del campo ayuda al ceo con la accesibilidad.-->
+        <input type="text" required placeholder="Tu nombre">
+
+    <!--MINLEGTH su objetivo es que el campo tenga como minimo cierto 
+    numero de letras//MAXLEGTH hace que el campo tenga como maximo cierto 
+    numero de letras -->
+        <input type="text" minlength="3" maxlength="10">
+        <input type="color">
+        <input type="email" required placeholder="ejemplo@gmail.com">
+
+    <!--NAME sirve para darle nombre al campo y se guarda los datos ingresados
+    ahi mismo -->
+        <input type="password" name="contraseña">
+        <input type="checkbox">     <!--CHECKBOX sirve para seleccionar una o varias opciones-->
+        <input type="radio">   <!--RADIO sirve para seleccionar solo una opcion-->
+        <input type="file">  <!--FILE sirve para subir archivos-->
+        <input type="date">  <!--DATE sirve para seleccionar una fecha-->
+        <input type="number" min="1" max="10"> <!--NUMBER sirve para ingresar solo numeros-->
+        <input type="range" min="0" max="10"> <!--RANGE sirve para seleccionar un valor dentro de un rango-->
+        <input type="tel" placeholder="999-999-999"> <!--TEL sirve para ingresar un numero telefonico-->
+        <input type="url" placeholder="https://www.ejemplo.com"> <!--URL sirve para ingresar una direccion web-->
+        <input type="search" placeholder="Buscar..."> <!--SEARCH sirve para ingresar un texto de busqueda-->        
+        <input type="submit">
+        <p>Ejemplo de como usar <span style="color: rgb(72, 69, 69); font-weight: bold;">SPAN</span></p><!-- SPAM sirva para poder resaltar ciertas partes que queremos pero tenemos que modificarlas con css y jvs-->
+    </form>
+
+    <h2 style="color: rgb(80, 66, 176);">SELECTORES</h2>
+    <P style="color: azure;">CLASES Y ID</P>
+
+    <ul><!--CLASES Y ID sirve para poder agrupar elementos y poder
+    modificarlos(css) en conjunto, ID tendra un nombre unico y 
+    sera unico por cada elemento -->
+    <li class="Clase_css">Clase1</li>
+    <li class="Clase_css">Clase1</li>
+    <li id="Clase_2">Clase2</li>
+
+    
+    </ul>
+    <!--bordes -->
+    <h2 class="Bordes" id="bordes">B-o-r-d-e-s</h2>
+    <!--Fondos -->
+    <h2 class="Fondos" id="fondos">F-O-N-D-O-S</h2>
+
+    <h2 id="degradado">DEGRADADO:</h2>
+
+<div class="display-flex">
+<div class="padre">
+    <div class="hijo"><p>hijo</p></div>
+</div>
+
+<div class="imagen-degradado">
+    <h2 class="contenido-degradado">hola</h2>
+</div>
+</div>
+<!--Sombras -->
+<div class="pared">
+    <div class="sombras" id="sombras">--Sombras:</div>
+    <ul>
+        <li>imagen:</li>
+        <div class="img"></div>
+        <li>texto:</li>
+        <div class="txt" >texto con Sombras</div>
+    </ul>
+</div>
+<!--LOGIN -->
+<div class="pared-login" >
+    
+    <form class="login">
+        <h2 id="login">Login</h2>
+        <!--fieldset: agrupa elementos dentro de un formulario y dibuja un borde alrededor. 
+legend: etiqueta opcional que actúa como título del fieldset.
+Útil para organizar visualmente secciones del formulario.
+--> 
+
+    <fieldset>
+        <legend>INFORMACIÓN BASICA</legend>
+        <div class="login-nombre">
+            <label for="nombre">NOMBRE</label>
+            <input type="text" placeholder="carlos" id="nombre">
+        </div>
+        <div class="login-email">
+            <label for="email">EMAIL</label>
+            <input type="email" placeholder="Email" id="email">
+        </div>
+    </fieldset>
+    <!--  
+<details>: crea un bloque desplegable.
+<summary>: título visible que al hacer clic muestra u oculta el contenido.
+Útil para mostrar definiciones o información extra sin ocupar espacio.
+-->
+<div class="datails">
+    <details> 
+        <summary>¿Qué es un fotograma?</summary>
+        
+    <p>Es ina imagen individual que componen videos y al reproducirce rapidamente hace la ilucion de movimiento. </p>
+        
+    </details>
+</div>
+    
+<!-- /** <select> crea un menú desplegable fijo que permite al usuario 
+    escoger una opción de una lista predefinida. **/
+/** <option> define cada una de las opciones dentro de un <select>. 
+    También se usa en <datalist> pero con diferencias. **/
+/** Las <option> dentro de <select> se pueden estilizar con CSS,
+    como cambiar color, fondo, fuente, etc. **/
+/** <input list="id"> permite al usuario escribir texto y 
+    obtener sugerencias desde un <datalist>. **/
+/** <datalist> contiene múltiples <option> que actúan como 
+    sugerencias para un campo <input>, pero no como un menú fijo. **/
+/** Las <option> dentro de <datalist> no se pueden estilizar con CSS.
+    Su apariencia depende del navegador y no es modificable. **/
+/** Usar <select> es ideal cuando se quiere limitar al usuario 
+    a solo las opciones disponibles. **/
+/** Usar <input> con <datalist> es útil cuando quieres permitir 
+    entrada libre pero sugerir algunas opciones. **/
+-->
+        <div class="formulario_option"><!--SELECT,OPTION-->
+            <label for="option">Tipo de usuario</label>
+            <select name="type_of_option" id="option">
+                <option value="usuario1">Seguidor/a</option>
+                <option value="usuario2">Empresa</option>
+                <option value="usuario3">Otros</option>
+            </select>
+        </div>
+        <div class="formulario_datalist"><!--INPUT,DATALIS,OPTION-->
+            <label for="datalist">Referente</label>
+            <input type="text" list="referente" id="datalist">
+            <datalist id="referente">
+            <option value="Joel">Estudiante de SENATI</option>
+            <option value="Intructor">Persona que instruye sobre ING.SOFTWARE</option>
+            <option value="Un amigo">Me recomendo un amigo</option>
+            </datalist>
+
+        </div>
+
+        <div class="mensaje">
+            <!-- READONLY:
+- El usuario NO puede editar el contenido.
+- SÍ puede seleccionar y copiar el texto.
+- SÍ se envía con el formulario.
+- Solo funciona en <input type="text">, <textarea>, etc.
+-->
+<!-- DISABLED:
+- El usuario NO puede editar ni seleccionar.
+- NO se envía con el formulario.
+- Funciona en <input>, <textarea>, <select>, <button>, etc. y row para
+indicar cuantas lineas tendra el texarea-->
+            <label for="mensaje">MENSAJE</label>
+            <textarea name="" id="mensaje" placeholder="escribe tu mensaje" ></textarea>
+        </div>
+        
+    </form>
+    
+
+</div>
+<!--Tablas -->
+<!-- 
+<table>: Contenedor principal de una tabla.
+<thead>: Encabezado de la tabla (opcional). 
+<tbody>: Cuerpo principal de la tabla.
+<tfoot>: Pie de tabla (opcional).
+
+<tr>: Fila de la tabla (table row).
+<th>: Celda de encabezado (table header), normalmente en negrita y centrada.
+<td>: Celda de datos (table data), contiene la información normal.
+
+colspan: Atributo que permite que una celda (th o td) se extienda a través de varias columnas.
+-->
+
+<div class="pared-tablas">
+    <h2 class="titulo-tablas">TABLAS</h2>
+    <table class="Tablas">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Unidad</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Cebolla</td>
+            <td>2.00 soles</td>
+            <td>2 kg</td>
+            <td>4.00 soles</td>
+        </tr>
+        <tr>
+            <td>Mango</td>
+            <td>5.00 soles</td>
+            <td>1 kg</td>
+            <td>5.00 soles</td>
+        </tr>
+        <tr>
+            <td>Zanahoria</td>
+            <td>6.00 soles</td>
+            <td>1 kg</td>
+            <td>6.00 soles</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">TOTAL PRECIO</th>
+            <td >15.00 soles</td>
+        </tr>
+    </tfoot>
+    </table>
+
+<h2>VIDEO</h2>
+<!-- 
+<video>: Etiqueta que permite insertar un video en HTML.
+
+Atributos del <video>:
+
+src:        Ruta o URL del archivo de video (debe ser directa, como .mp4, .webm, etc.).
+autoplay:   Hace que el video comience automáticamente al cargarse la página. Requiere que esté muted en muchos navegadores.
+loop:       Hace que el video se repita automáticamente cuando termina.
+controls:   Muestra los controles del video (play, pausa, volumen, etc.).
+muted:      Silencia el audio del video desde el inicio. Necesario para autoplay automático en la mayoría de navegadores.
+width / height: Permiten establecer el tamaño del video en píxeles.
+
+Nota:
+- No se puede usar directamente un enlace de YouTube como src en <video>.-->
+<video autoplay loop controls  muted
+src="angel.mp4" >
+<track src="captions.vtt" default kind="captions" srclang="es" label="Español(Latinoamerica)"
+>
+tu navegador no soporta este video
+
+</video>
+
+</div>
+    
+
+</div>
+</body>         
+</html>
+<!-- -->

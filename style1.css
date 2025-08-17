@@ -1,0 +1,13 @@
+body{
+    margin: 0;
+    text-align: center;
+
+}
+div{
+    display: inline-block;
+    
+    width: 200px;
+    height: 100px;
+    background-color: blueviolet;
+    margin: 10px;
+}

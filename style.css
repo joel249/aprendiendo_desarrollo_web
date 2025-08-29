@@ -354,18 +354,20 @@ color: #5e6599;
 }
 /*Tablas*/
 .pared-tablas{
-    padding: 1px;/*para que no colapse los margenes se agrga paddin o borde para que contenga el margen, tambien usar border-box pq sino se desborda y hace una barra horizontal*/
+    padding: 0px;/*para que no colapse los margenes se agrga paddin o borde para que contenga el margen, tambien usar border-box pq sino se desborda y hace una barra horizontal*/
     width: 100%;
     height: 100%;
-    background-color: #a19f9f;
+    background-color: #eee9e9;
     box-sizing: border-box;
 }
 .titulo-tablas{
     color: #000000;
     text-align: center;
+    margin-top: 0px;/*para que no colapse los margenes*/
     
 }
 th,td{
+    text-align: center;
     border: solid 2px rebeccapurple;
     padding: 5px 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -373,13 +375,12 @@ th,td{
 
 }
 .Tablas{
-    width: 100%;
-    height: 100%;
+    width: 80%;
     border: solid 2px rebeccapurple;
-    margin: auto;
+    margin: 0 auto;
     margin-bottom: 50px;
     border-collapse: collapse;/*permite juntar los bordes de las celdas, si lo usas ya no usaras border-speacing*/
-    border-spacing: 20px;/*hace que los borde dentro tengan una distancia */
+    border-spacing: 20px;/*hace que los borde dentro tengan una distancia, aqui ya no es necesario */
     
 }
 video{

@@ -1,0 +1,393 @@
+body{
+    margin: 0;
+    background-color: lightcoral;
+    font-size: 24px;
+   
+}
+form{
+    background-color: rgb(136, 227, 227);
+    margin-top: 50px;
+    padding: 20px;
+    box-shadow: 0px 8px 35px 0px rgba(0,0,0,0.2)    ;
+    max-width: 500px;
+    margin:  50px auto;
+    
+
+}
+input{
+    width: 100%;
+    padding: 10px 10px;
+    margin: 5px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0px 5px 35px 0px rgba(0,0,0,0.2);
+
+}
+fieldset{
+    border: solid 3px rgb(33, 32, 32);
+    border-radius: 5px;
+}
+legend{
+    font-family:sans-serif;
+    font-size: 20px;
+    padding: 0 6px;
+}
+
+
+details{
+    width: 60%;
+    background-color: darkgray;
+    border: solid 1px gold;
+    border-radius: 10px;
+    margin: 5px auto ;
+    font-size: 20px; 
+    
+    
+}
+summary{
+    background-color: firebrick;
+    padding: 10px 20px;
+    font-family: sans-serif;
+    border-radius: 10px 10px 0 0;
+    font-size: 1.3em;
+}
+/* Pseudo-clases */
+
+/* :is() 
+   Sirve para agrupar varios selectores y aplicar la misma regla 
+   sin tener que repetir código.
+   Ejemplo: aquí aplicamos margin: 0 a h1, h2 y h3 
+:is(h1, h2, h3) {
+  margin: 0;
+
+}
+:has() 
+   Sirve para seleccionar un elemento *si contiene* algo en su interior.
+   Ejemplo: aquí seleccionamos los <article> que tengan al menos una <img>
+   y les ponemos un borde. 
+article:has(img) {
+  border: 1px solid #ccc;
+}*/
+.pseudo-clase{
+    height: 50vh;
+    background-color: lightskyblue
+}
+.email{
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.label_email:has(+ .email:valid),.email:valid{
+    color: green;
+}
+.label_email:has(+ .email:invalid),.email:invalid{
+    color: red;
+}
+.email:focus{
+    border: solid 3px blue;
+    background-color: lightgreen;
+}
+
+/* Pseudo-elementos 
+::before
+   Sirve para insertar contenido antes del contenido de un elemento.
+   Ejemplo: aquí insertamos una estrella antes de cada <h2>
+*/
+.parrafo{
+    font-size: 24;
+
+}
+.parrafo::first-letter{
+    color: red;
+    font-size: 40px;
+    letter-spacing: 5px;
+    background-color: lightcoral;/* color del body  para que el color de fondo  del texto que le continua no leha ver mal */
+}
+.parrafo::first-line{
+    color: chartreuse;
+    background-color: rgb(87, 83, 83);
+}
+/*metodologia BEM (Block Element Modifier)*/
+.BEM{
+    height: 100vh;
+}
+.nav{
+    background-color: aqua;
+    box-sizing: border-box;
+    height: 8vh;/* altura del nav */
+    align-items: center;
+
+}
+.nav__list{
+    list-style: none;/* para quitar los puntos de los ul */
+    display:flex;/* para poner los li en fila */
+    justify-content: center;
+    align-items: stretch;/* 
+  Nota importante:
+  No usamos align-items: center en .nav__list porque:
+  - Esto centra verticalmente el contenido, pero limita la altura de los <li>.
+  - Aunque pongas height: 100% en los <li> o en los <a>, no crecerán
+    ya que Flexbox los mantiene ajustados al contenido.
+  - El valor por defecto (align-items: stretch) es mejor en este caso,
+    porque estira los <li> a todo el alto del contenedor (.nav__list).
+  - Así, los enlaces (<a>) pueden ocupar el 100% del nav y ser totalmente clickeables.
+*/
+
+    padding: 0;/* para quitar el padding por defecto de los ul */
+    margin: 0;/* para quitar el margin por defecto de los ul */
+    height: 100%;
+    
+}
+.nav__item{
+    /*
+    display: flex + align-items: center en <li>:
+    centra verticalmente el contenido, como un botón más pequeño (.link--boton)
+    dentro de la barra sin afectar su padding ni clickeabilidad.
+  */
+    display: flex;
+    align-items: center;
+    margin: 0 10px;/* separacion entre los li nada mas ni margin ni padding pq el <a>  */
+}
+.nav__link{
+    display: flex;/* para que el padding del <a> sea clickeable, convierte el a en block y no en lineal */
+    align-items: center;/* para centrar el texto verticalmente */
+    padding: 0 20px; /* le da alto al nav y aparte el paddin sera clickeable*/
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    height: 100%;
+    
+}
+.nav__link:hover{
+    background-color: rgb(33, 116, 58);
+    color: rgb(126, 142, 142);
+}
+.link--boton{
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: solid 2px rgb(135, 141, 141);
+    border-radius: 15px;
+    color: rgb(255, 250, 250);
+    padding: 0 20px;
+    height: 70%;
+    
+    
+    
+}
+.link--boton:hover{
+    background-color: rgb(255, 255, 255);
+    color: aqua;
+    border: solid 2px black;
+}
+/* 
+  transition: permite animar cambios de propiedades de manera suave.
+
+  Sintaxis general:
+    transition: [propiedad] [duración] [función de tiempo] [retraso];
+
+  Propiedades más usadas:
+    - all          → anima todos los cambios posibles del elemento.
+    - background-color → animación de cambio de color de fondo.
+    - color        → animación del color del texto.
+    - transform    → animación de escalas, rotaciones, traslaciones.
+    - width/height → animación de tamaño.
+    - opacity      → animación de visibilidad (desaparecer/aparecer).
+    - margin/padding → animación de espaciado alrededor o dentro del elemento.
+
+  Duración:
+    - especifica el tiempo que dura la animación (ej. 0.5s, 1s).
+
+  Función de tiempo (timing-function):
+    - ease      → comienza lento, acelera y termina lento.
+    - linear    → velocidad constante.
+    - ease-in   → comienza lento y termina rápido.
+    - ease-out  → comienza rápido y termina lento.
+    - ease-in-out → combina in y out.
+
+  Retraso (delay):
+    - tiempo que espera antes de iniciar la animación (ej. 0.2s).
+
+  Ejemplo:
+    transition: background-color 0.5s ease, transform 0.3s linear 0.1s;
+*/
+
+.contenido{
+    height: 230px;
+    width: 230px;
+    background-color: lightgray;
+    position: relative;
+    top: 50px;
+    color: rgb(11, 11, 11);
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    transition-property: color , background-color, font-size,left;
+    transition-duration: 1s;
+    text-align: center;
+    left: 0;
+    
+}
+.contenido:hover{
+    background-color: greenyellow;
+    color: rgb(238, 79, 169);
+    font-size: 40px;
+    left: 400px;
+    
+}
+/* 
+La propiedad "order" en Flexbox permite cambiar el orden visual
+de los elementos dentro del contenedor sin modificar el HTML.
+Por defecto, todos los elementos tienen order: 0. 
+Valores más altos aparecen después de los valores más bajos.
+*/
+.padre_flex{
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    height: 100vh;
+}
+/* 
+outline: dibuja un contorno alrededor del elemento sin afectar su tamaño.
+outline-offset: separa (o acerca si es negativo) ese contorno del borde del elemento.
+Se puede animar con transition para efectos visuales al hacer hover o focus.
+Ejemplo de uso: resaltar botones o inputs de forma accesible y estética.
+*/
+
+.outline{
+    border: solid 3px black;
+    border-radius: 10px;
+    padding: 20px 40px 0 40px;
+    height: auto;
+    box-sizing: border-box;
+    width: 65%;
+    
+
+}
+.flexbox{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+}
+.form{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    
+    
+}
+.input{
+    position: relative;
+    max-width: 500px;
+    top: 15px;
+    background-color: lightgreen;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    height: 50px;
+}
+input:hover{
+    outline-color: rgb(255, 255, 255);
+    outline-width: 5px;
+    outline-style: solid;
+    background-color: lightcoral;
+}
+input:focus{
+    background-color: lightblue;
+    outline-color: rgb(127, 127, 128);
+    outline-width: 5px;
+    outline-style: solid;}
+
+
+.caja{
+    width: 200px;
+    height: 100px;
+    background-color: lightblue;
+    border-radius: 5px;
+    order: 0;
+    max-width: 150px;
+    text-align: center;
+    transition-property: font-size, background-color,color,font-weight,font-family;
+    transition-duration: 0.3s;
+    
+}
+.caja:first-child{
+    background-color: blueviolet;
+    order: 2;
+}
+.caja:last-child{
+    background-color: burlywood;
+    order: -1;
+}
+.caja:hover{
+    background-color: aquamarine;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    font-family: sans-serif;
+}
+/* 
+flex-grow: define cuánto puede crecer un elemento en relación con los demás 
+cuando hay espacio sobrante en el contenedor. 
+Ejemplo: si un ítem tiene grow=2 y otro grow=1, el primero crecerá el doble. 
+
+flex-shrink: indica cuánto puede encogerse un elemento en relación con los demás 
+cuando el espacio disponible es más pequeño que la suma de los ítems. 
+Ejemplo: shrink=0 significa que el ítem no se encoge. 
+
+flex-basis: establece el tamaño inicial del ítem (antes de aplicar grow o shrink). 
+Puede ser un valor fijo (px, %) o 'auto'. 
+Es como el tamaño base que se toma en cuenta antes de redistribuir espacio. 
+
+En resumen:
+flex = flex-grow flex-shrink flex-basis 
+Ejemplo: flex: 1 1 200px; 
+→ El ítem inicia con 200px, puede crecer en proporción 1 y encogerse en proporción 1.
+
+/* align-self: permite alinear un hijo individual en un contenedor flex,
+   ignorando la regla general de align-items.
+   Ejemplo: puedes bajar solo un botón al fondo (flex-end),
+   mientras los demás hijos permanecen centrados. */
+.flex-item{
+    display: flex;
+    flex-direction:row;
+    align-items: start;
+    justify-content: start;
+    height: 600px;
+    max-width:80% ;
+    background-color: lightgray;
+    margin: auto;
+    }
+.flex-items{
+    border: solid 2px black;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: magenta;
+    flex-basis: 50px;
+    flex-grow: 1;
+    flex-shrink: 1;
+
+}
+.flex-items:first-child{
+    background-color: tomato;
+    flex-grow: 1;
+}
+.flex-items:last-child{
+    background-color: yellow;
+    flex-basis: 100px;
+    flex-grow: 4;
+    flex-shrink: 3;
+}
+p{
+    text-align: center;
+    font-size: 30px;
+    font-family: sans-serif;
+    color: white;
+    margin-bottom: 0;
+
+}

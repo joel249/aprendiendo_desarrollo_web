@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <title>Document</title>
+</head>
+<body>
+  
+      <form>
+        <fieldset>
+            <legend>INFORMACION BASICA</legend>
+                <input type="text" name="" id="" placeholder="Nombre">
+                <input type="text" name="" id="" placeholder="Apellido">
+                <input type="number" name="" id="" placeholder="Edad">
+        </fieldset>
+      </form>
+
+    <div class="datails">
+        <details>
+            <summary> ¿Que somos?</summary>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum incidunt omnis provident ratione ipsum non saepe delectus officiis doloremque voluptate vero commodi voluptatibus, sed tempora, consequatur sunt porro nihil velit!</p>
+        </details>
+        <details>
+            <summary> Nuestro objetivo </summary>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quo, eos illo maiores magni ipsam ex voluptatibus iusto, nemo ratione mollitia eaque voluptas libero minus culpa inventore necessitatibus aspernatur tempore?</p>
+        </details>
+
+    </div>
+
+    <!--PSEUDO-CLASES-->
+
+<!--  🔹 Pseudo-clases en CSS
+
+  - Una pseudo-clase se escribe con un solo ":" (ej: :hover, :focus).
+  - Sirve para seleccionar elementos en un estado especial o bajo cierta condición,
+    sin necesidad de añadir clases extra en el HTML.
+  - No crean un nuevo elemento, solo cambian la apariencia del que ya existe.
+
+Ejemplos:
+    - :hover → cuando pasamos el mouse por encima de un elemento.
+    - :focus → cuando un input recibe el cursor para escribir.
+    - :nth-child(2) → selecciona el segundo hijo dentro de un contenedor.
+    - :is(), :has() → pseudo-clases avanzadas para simplificar o relacionar selectores.
+
+  En resumen:
+    Las pseudo-clases permiten aplicar estilos dinámicos o condicionales
+    basados en la interacción del usuario o la posición de un elemento.
+*/-->
+
+    <div class="pseudo-clase">
+        <h2>Ejemplo de Pseudo-clases</h2>
+        <label class="label_email" for="email">email</label>
+        <input class="email"type="email" required id="email" placeholder="Correo Electronico">
+    </div>
+
+<!-- 
+  🔹 Pseudo-elementos en CSS
+
+  - Se escriben con doble dos puntos :: (ej: ::before, ::after).
+  - Sirven para dar estilo a una parte específica de un elemento
+    o para insertar contenido virtual sin necesidad de ponerlo en el HTML.
+  - No dependen del estado del elemento (como las pseudo-clases),
+    sino que actúan sobre su estructura o contenido.
+
+  ✅ Ejemplos:
+    ::before   → Inserta contenido antes del elemento.
+    ::after    → Inserta contenido después del elemento.
+    ::first-line → Estiliza la primera línea del texto.
+    ::first-letter → Estiliza solo la primera letra.
+
+  👉 Diferencia:
+    - Pseudo-clase (:hover, :valid) = estado especial.
+    - Pseudo-elemento (::before, ::after) = parte o contenido extra.
+-->
+    <div class="pseudo-elemento">
+        <h2>Ejemplo de Pseudo-elementos</h2>
+        <p class="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+    </div>
+
+    <!-- 
+  🌐 METODOLOGÍA BEM (Block Element Modifier)
+
+  BEM significa:
+    - B → Block (Bloque)
+    - E → Element (Elemento)
+    - M → Modifier (Modificador)
+
+  📌 1. BLOCK (Bloque)
+      Es un componente independiente, como un menú, tarjeta, botón, header, etc.
+      Ejemplo: .menu, .card, .button
+
+  📌 2. ELEMENT (Elemento)
+      Es una parte interna de un bloque que cumple una función.
+      Se escribe con doble guion bajo "__".
+      Ejemplo: .menu__item, .card__title, .button__icon
+
+  📌 3. MODIFIER (Modificador)
+      Sirve para cambiar el estado, estilo o variación de un bloque o elemento.
+      Se escribe con doble guion medio "--".
+      Ejemplo: .menu__item--active, .card--dark, .button--large
+
+  🎯 Ventajas:
+    - Código más ordenado y escalable.
+    - Facilita la lectura y mantenimiento del CSS.
+    - Evita conflictos entre clases.
+
+  🔎 Ejemplo práctico:
+    <div class="card card--dark">
+      <h2 class="card__title">Título</h2>
+      <p class="card__text">Contenido</p>
+    </div>
+-->
+<div class="BEM">
+	<div class="nav">
+		<ul class="nav__list">
+			<li class="nav__item"><a href="#" class="nav__link">Inicio</a></li>
+			<li class="nav__item"><a href="#" class="nav__link">Servicios</a></li>
+			<li class="nav__item"><a href="#" class="nav__link">Contacto</a></li>
+			<li class="nav__item"><a href="#" class="nav__link link--boton">Login</a></li>
+		</ul>
+	</div>
+	<div class="contenido">
+		<p class="contenido__texto">pdejo</p>
+	</div>
+<!--flexbox y order, outline-->
+<div class="padre_flex">
+  <div class="outline">
+    <div class="flexbox">
+      <div class="caja">caja1</div>
+      <div class="caja">caja2</div>
+      <div class="caja">caja3</div>
+      <div class="caja">caja4</div>
+      <div class="caja">caja5</div>
+      <div class="caja">caja6</div>
+      <div class="caja">caja7</div>
+      <div class="caja">caja8</div>
+      <div class="caja">caja9</div>
+    </div>
+    <div class="form">
+      <input class="input"  type="text" name="" id="" placeholder="Nombre">
+    </div>
+  </div>
+</div>
+<p>flex-items</p>
+<div class="flex-item">
+  
+  <div class="flex-items">1</div>
+  <div class="flex-items">2</div>
+  <div class="flex-items">3</div>
+  <div class="flex-items">4</div>
+  <div class="flex-items">5</div>
+</div>
+</body>
+</html>

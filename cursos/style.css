@@ -146,7 +146,14 @@ justify-content: center;
 align-items alinea en el eje cruzado:
 - Si row → alinea vertical (arriba a abajo)
 - Si column → alinea horizontal (izquierda a derecha) 
-align-items: center;*/
+align-items: center;
+
+flex-wrap controla si los elementos se envuelven a la siguiente línea.
+    Valores:
+    - nowrap: todo en una sola línea (por defecto)
+    - wrap: los elementos que no caben bajan a la siguiente línea
+    - wrap-reverse: igual que wrap, pero las nuevas filas se agregan arriba
+*/
 
     display: flex;
     flex-direction: row;
@@ -291,7 +298,7 @@ text-shadow:  0 0 10px rgb(173, 169, 169);
 
 }/*Formularios*/
 #nombre, #email,#option,#datalist,#mensaje{
-width: 100%;
+width: 100%;/*este hace que los label esten arriba de los imput*/
 box-sizing: border-box;
 border: none;
 border-bottom: solid 3px rgb(191, 190, 190);
